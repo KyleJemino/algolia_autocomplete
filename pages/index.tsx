@@ -8,8 +8,10 @@ import Autocomplete from '../components/Autocomplete'
 
 const Home: NextPage = () => {
   const algoliaClient = algoliasearch(
-    process.env.ALGOLIA_APP_ID,
-    process.env.ALGOLIA_API_KEY
+    // process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+    // process.env.NEXT_PUBLIC_ALGOLIA_API_KEY
+    'latency',
+    '6be0576ff61c053d5f9a3225e2a90f76'
   )
 
   const searchClient = {
@@ -36,7 +38,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <InstantSearch
         searchClient={searchClient}
-        indexName={process.env.ALGOLIA_INDEX_NAME}
+        indexName={'instant_search'}
       >
         <Autocomplete
           placeholder='Search'

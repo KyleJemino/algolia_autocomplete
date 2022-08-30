@@ -50,7 +50,6 @@ const Autocomplete = ({
   >({ query });
 
   useEffect(() => {
-    console.log(NEXT_PUBLIC_ALGOLIA_QUERY_SUGGESTIONS_INDEX_NAME)
     setQuery(instantSearchUiState.query);
     setPage(0);
   }, [instantSearchUiState]);
@@ -74,7 +73,7 @@ const Autocomplete = ({
 
     const querySuggestions = createQuerySuggestionsPlugin({
       searchClient,
-      indexName: 'MB_staging_query_suggestions',
+      indexName: 'instant_search_demo_query_suggestions',
       getSearchParams() {
         return recentSearches.data!.getAlgoliaSearchParams({
           hitsPerPage: 6
