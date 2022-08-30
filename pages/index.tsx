@@ -38,6 +38,12 @@ const Home: NextPage = () => {
         searchClient={searchClient}
         indexName={process.env.ALGOLIA_INDEX_NAME}
       >
+        <Autocomplete
+          placeholder='Search'
+          detachedMediaQuery='none'
+          openOnFocus
+          searchClient={searchClient}
+        />
       </InstantSearch>
     </div>
   )
